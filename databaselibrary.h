@@ -4,15 +4,20 @@
 #include"QVector"
 #include "QtSql/QSql"
 #include "QtSql/QSqlDatabase"
+#include "QtSql/QSqlTableModel"
+#include "QtSql/QSqlDriver"
+#include <QDebug>
 
 class DatabaseLibrary
 {
 protected:
-    QVector<QString> m_databaseNameContainer;
+    QSqlDatabase m_database = QSqlDatabase::addDatabase("QSQLITE");
 public:
     DatabaseLibrary();
-    bool cConnectDatabase(QString name, QString hostName, QString databaseName, QString userName, QString password);
-    void cDisconnectDatabase(int index);
+    ~DatabaseLibrary() {cDisconnectDatabase();}
+    bool cConnectDatabase(QString hostName, QString databaseName, QString userName, QString password);
+    void cDisconnectDatabase();
+    QSqlTableModel *cModel (QString table, int numOfColumns, QString* Columns);
 };
 
 #endif // DATABASELIBRARY_H
