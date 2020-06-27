@@ -5,11 +5,15 @@
 #include "edytuj_dialog.h"
 #include "szukaj_dialog.h"
 
+ UczelniaDB uczelnia;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->tableViewDatabase->setModel(uczelnia.getModel(0));
+    ui->tableViewDatabase->show();
 }
 
 MainWindow::~MainWindow()

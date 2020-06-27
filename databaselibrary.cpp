@@ -5,39 +5,35 @@ DatabaseLibrary::DatabaseLibrary()
 
 }
 
-bool DatabaseLibrary::cConnectDatabase(QString name, QString hostName, QString databaseName, QString userName, QString password)
+bool DatabaseLibrary::cConnectDatabase(QString hostName, QString databaseName, QString userName, QString password)
 {
-    QSqlDatabase l_database = QSqlDatabase::addDatabase(name);
-    l_database.setHostName(hostName);
-    l_database.setDatabaseName(databaseName);
-    l_database.setUserName(userName);
-    l_database.setPassword(password);
-    if(l_database.open()){
-        m_databaseNameContainer.append(name);
+    m_database.setHostName(hostName);
+    m_database.setDatabaseName(databaseName);
+    m_database.setUserName(userName);
+    m_database.setPassword(password);
+    if(m_database.open()){
+        qDebug() << "Yes";
         return true;
     }
     else{
+        qDebug() << "No";
         return false;
     }
 }
 
-void DatabaseLibrary::cDisconnectDatabase(int index)
+void DatabaseLibrary::cDisconnectDatabase()
 {
-    QSqlDatabase l_database = QSqlDatabase::database(m_databaseNameContainer[index]);
-    if(l_database.isOpen())
-    {
-        l_database.close();
-        m_databaseNameContainer.remove(index);
-    }
-    else{
-        m_databaseNameContainer.remove(index);
-    }
+    if(m_database.isOpen())
+        m_database.close();
 }
 
-QSqlTableModel *DatabaseLibrary::cModel(int index)
+QSqlTableModel *DatabaseLibrary::cModel(QString table, int numOfColumns, QString* columns)
 {
-    QSqlDatabase l_database = QSqlDatabase::database(m_databaseNameContainer[index]);
-    QSqlTableModel* l_model = new QSqlTableModel(nullptr,l_database);
+    QSqlTableModel* l_model = new QSqlTableModel(nullptr,m_database);
+    l_model->setTable(table);
+    for(int i = 0; i < numOfColumns; i++){
+        l_model[0].setHeaderData(i,Qt::Horizontal, columns[i]);
+    }
     l_model->select();
     return l_model;
 }

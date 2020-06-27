@@ -23,6 +23,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     szukaj_dialog.cpp \
+    uczelniadb.cpp \
     usun_dialog.cpp
 
 HEADERS += \
@@ -31,6 +32,7 @@ HEADERS += \
     edytuj_dialog.h \
     mainwindow.h \
     szukaj_dialog.h \
+    uczelniadb.h \
     usun_dialog.h
 
 FORMS += \
