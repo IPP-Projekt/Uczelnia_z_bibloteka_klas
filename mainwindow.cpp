@@ -52,5 +52,4 @@ void MainWindow::on_btn_Szukaj_clicked()
 void MainWindow::on_tableViewDatabase_clicked(const QModelIndex &index)
 {
     selectedEntry = ui->tableViewDatabase->model()->index(index.row(),0).data().toInt();
-    qDebug() << selectedEntry;
 }
