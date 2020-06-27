@@ -33,3 +33,11 @@ void DatabaseLibrary::cDisconnectDatabase(int index)
         m_databaseNameContainer.remove(index);
     }
 }
+
+QSqlTableModel *DatabaseLibrary::cModel(int index)
+{
+    QSqlDatabase l_database = QSqlDatabase::database(m_databaseNameContainer[index]);
+    QSqlTableModel* l_model = new QSqlTableModel(nullptr,l_database);
+    l_model->select();
+    return l_model;
+}
