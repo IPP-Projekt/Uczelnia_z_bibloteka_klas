@@ -18,15 +18,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     databaselibrary.cpp \
+    dodaj_dialog.cpp \
+    edytuj_dialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    szukaj_dialog.cpp \
+    usun_dialog.cpp
 
 HEADERS += \
     databaselibrary.h \
-    mainwindow.h
+    dodaj_dialog.h \
+    edytuj_dialog.h \
+    mainwindow.h \
+    szukaj_dialog.h \
+    usun_dialog.h
 
 FORMS += \
-    mainwindow.ui
+    dodaj_dialog.ui \
+    edytuj_dialog.ui \
+    mainwindow.ui \
+    szukaj_dialog.ui \
+    usun_dialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
