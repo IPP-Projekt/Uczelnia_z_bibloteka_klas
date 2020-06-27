@@ -25,6 +25,8 @@ private slots:
 
     void on_btn_Szukaj_clicked();
 
+    void on_tableViewDatabase_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
 };

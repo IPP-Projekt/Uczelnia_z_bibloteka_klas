@@ -5,8 +5,8 @@
 #include "edytuj_dialog.h"
 #include "szukaj_dialog.h"
 
- UczelniaDB uczelnia;
-
+UczelniaDB uczelnia;
+int selectedEntry;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -47,4 +47,9 @@ void MainWindow::on_btn_Szukaj_clicked()
     Szukaj_dialog dialog;
     dialog.setModal(true);
     dialog.exec();
+}
+
+void MainWindow::on_tableViewDatabase_clicked(const QModelIndex &index)
+{
+    selectedEntry = ui->tableViewDatabase->model()->index(index.row(),0).data().toInt();
 }
