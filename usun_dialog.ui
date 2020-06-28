@@ -32,9 +32,9 @@
   <widget class="QLabel" name="labelEntry">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>50</x>
      <y>160</y>
-     <width>201</width>
+     <width>311</width>
      <height>31</height>
     </rect>
    </property>
@@ -49,6 +49,19 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>120</y>
+     <width>211</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Na pewno chcesz usunąć poniższy rekord?</string>
    </property>
   </widget>
  </widget>
