@@ -19,7 +19,7 @@ public:
     bool cConnectDatabase(QString hostName, QString databaseName, QString userName, QString password);
     void cDisconnectDatabase();
     QSqlTableModel *cModel (QString table, int numOfColumns, QString* Columns);
-    bool cInsertRecord(QSqlTableModel* model, int fieldsNum, QSqlField field[]);
+    bool cInsertRecord(QSqlTableModel* model, QSqlRecord& record);
 };
 
 #endif // DATABASELIBRARY_H

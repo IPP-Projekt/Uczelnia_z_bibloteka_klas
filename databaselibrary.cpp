@@ -38,11 +38,10 @@ QSqlTableModel *DatabaseLibrary::cModel(QString table, int numOfColumns, QString
     return l_model;
 }
 
-bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, int fieldsNum, QSqlField* field)
+bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, QSqlRecord& record)
 {
     QSqlRecord l_record;
-    for (int i = 0; i < fieldsNum; i++){
-    //l_record.append(field[i]);
-        return true;
+        int i = model->rowCount();
+        return model->insertRecord(i,record);
     }
 }
