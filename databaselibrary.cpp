@@ -37,3 +37,11 @@ QSqlTableModel *DatabaseLibrary::cModel(QString table, int numOfColumns, QString
     l_model->select();
     return l_model;
 }
+
+bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, QSqlRecord& record)
+{
+    QSqlRecord l_record;
+        int i = model->rowCount();
+        return model->insertRecord(i,record);
+    }
+}
