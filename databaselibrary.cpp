@@ -42,6 +42,7 @@ bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, int fieldsNum, QSqlFi
 {
     QSqlRecord l_record;
     for (int i = 0; i < fieldsNum; i++){
-    l_record.append(field[i]);
+    //l_record.append(field[i]);
+        return true;
     }
 }
