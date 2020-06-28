@@ -15,7 +15,7 @@ edytuj2_Dialog::~edytuj2_Dialog()
     delete ui;
 }
 
-QString edytuj2_Dialog::edycjarekordow()
+/*QString edytuj2_Dialog::edycjarekordow()
 {
     string rekordy;
-}
+}*/
