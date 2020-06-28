@@ -1,12 +1,13 @@
 #ifndef DATABASELIBRARY_H
 #define DATABASELIBRARY_H
 
-#include"QVector"
+#include "QVector"
 #include "QtSql/QSql"
 #include "QtSql/QSqlDatabase"
 #include "QtSql/QSqlTableModel"
 #include "QtSql/QSqlDriver"
-#include <QDebug>
+#include "QDebug"
+#include "QtSql/QSqlRecord"
 
 class DatabaseLibrary
 {
@@ -18,6 +19,7 @@ public:
     bool cConnectDatabase(QString hostName, QString databaseName, QString userName, QString password);
     void cDisconnectDatabase();
     QSqlTableModel *cModel (QString table, int numOfColumns, QString* Columns);
+    bool cInsertRecord(QSqlTableModel* model, int fieldsNum, QSqlField field[]);
 };
 
 #endif // DATABASELIBRARY_H
