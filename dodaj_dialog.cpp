@@ -15,18 +15,26 @@ Dodaj_dialog::~Dodaj_dialog()
 {
     delete ui;
 }
+void Dodaj_dialog::setUczelnia(UczelniaDB* uczelniaPointer){
+    uczelnia = uczelniaPointer;
+}
 
-QString Dodaj_dialog::nowyrekord()
+void Dodaj_dialog::nowyrekord()
 {
-    QString tekst = ui->txtbox_imie->text();
-    QSqlField pole = QSqlField(tekst,QVariant::Char);
-    QSqlRecord rekord = QSqlRecord();
-    rekord.insert(2,pole);
-    const QSqlRecord rekordstaly;
-
-    QSqlTableModel::insertRecord(3,rekordstaly);
-
-
+    QString tekstImie = ui->txtbox_imie->text();
+    QString tekstNazwisko = ui->txtbox_nazwisko->text();
+    QString tekstSrednia = QString::number(ui->doubleSpinBoxSrednia->value());
+    QSqlRecord rekord = uczelnia->getModel(0)->record();
+    rekord.setValue("Id",DatabaseLibrary::cGenerateIndex(uczelnia->getModel(0)));
+    rekord.setValue("Imie",tekstImie);
+    rekord.setValue("Nazwisko",tekstNazwisko);
+    rekord.setValue("Srednia",tekstSrednia);
+    qDebug() << DatabaseLibrary::cInsertRecord(uczelnia->getModel(0),rekord);
 }
 
 
+
+void Dodaj_dialog::on_buttonBox_accepted()
+{
+    nowyrekord();
+}
