@@ -19,6 +19,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     databaselibrary.cpp \
     dodaj_dialog.cpp \
+    edytuj2_dialog.cpp \
+    edytuj2_imie_dialog.cpp \
+    edytuj2_imienazwisko_dialog.cpp \
+    edytuj2_imiesrednia_dialog.cpp \
+    edytuj2_nazwisko_dialog.cpp \
+    edytuj2_srednia_dialog.cpp \
+    edytuj2_srednianazwisko_dialog.cpp \
     edytuj_dialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -28,6 +35,13 @@ SOURCES += \
 HEADERS += \
     databaselibrary.h \
     dodaj_dialog.h \
+    edytuj2_dialog.h \
+    edytuj2_imie_dialog.h \
+    edytuj2_imienazwisko_dialog.h \
+    edytuj2_imiesrednia_dialog.h \
+    edytuj2_nazwisko_dialog.h \
+    edytuj2_srednia_dialog.h \
+    edytuj2_srednianazwisko_dialog.h \
     edytuj_dialog.h \
     mainwindow.h \
     szukaj_dialog.h \
@@ -35,6 +49,13 @@ HEADERS += \
 
 FORMS += \
     dodaj_dialog.ui \
+    edytuj2_dialog.ui \
+    edytuj2_imie_dialog.ui \
+    edytuj2_imienazwisko_dialog.ui \
+    edytuj2_imiesrednia_dialog.ui \
+    edytuj2_nazwisko_dialog.ui \
+    edytuj2_srednia_dialog.ui \
+    edytuj2_srednianazwisko_dialog.ui \
     edytuj_dialog.ui \
     mainwindow.ui \
     szukaj_dialog.ui \
