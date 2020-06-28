@@ -43,5 +43,4 @@ bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, QSqlRecord& record)
     QSqlRecord l_record;
         int i = model->rowCount();
         return model->insertRecord(i,record);
-    }
 }
