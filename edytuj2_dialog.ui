@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dodaj_dialog</class>
- <widget class="QDialog" name="Dodaj_dialog">
+ <class>edytuj2_Dialog</class>
+ <widget class="QDialog" name="edytuj2_Dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>374</width>
-    <height>273</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>241</y>
-     <width>156</width>
-     <height>23</height>
+     <x>30</x>
+     <y>240</y>
+     <width>341</width>
+     <height>32</height>
     </rect>
    </property>
    <property name="orientation">
@@ -32,9 +32,9 @@
   <widget class="QLineEdit" name="txtbox_imie">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>20</y>
-     <width>133</width>
+     <x>60</x>
+     <y>10</y>
+     <width>113</width>
      <height>20</height>
     </rect>
    </property>
@@ -42,10 +42,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>20</y>
-     <width>20</width>
-     <height>16</height>
+     <x>10</x>
+     <y>10</y>
+     <width>47</width>
+     <height>13</height>
     </rect>
    </property>
    <property name="text">
@@ -55,10 +55,10 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>50</y>
-     <width>44</width>
-     <height>16</height>
+     <x>10</x>
+     <y>40</y>
+     <width>47</width>
+     <height>13</height>
     </rect>
    </property>
    <property name="text">
@@ -69,21 +69,21 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>80</y>
-     <width>62</width>
-     <height>16</height>
+     <y>70</y>
+     <width>47</width>
+     <height>13</height>
     </rect>
    </property>
    <property name="text">
-    <string>Srednia ocen</string>
+    <string>Srednia</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="txtbox_nazwisko">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>50</y>
-     <width>133</width>
+     <x>60</x>
+     <y>40</y>
+     <width>113</width>
      <height>20</height>
     </rect>
    </property>
@@ -91,9 +91,78 @@
   <widget class="QLineEdit" name="txtbox_srednia">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>80</y>
-     <width>133</width>
+     <x>60</x>
+     <y>70</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtbox_noweNazwisko">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>150</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>150</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nowe Nazwisko</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>130</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nowe Imie</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>180</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nowa Srednia</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtbox_nowaSrednia">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>180</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtbox_noweImie">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>120</y>
+     <width>113</width>
      <height>20</height>
     </rect>
    </property>
@@ -104,7 +173,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>Dodaj_dialog</receiver>
+   <receiver>edytuj2_Dialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -120,7 +189,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>Dodaj_dialog</receiver>
+   <receiver>edytuj2_Dialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

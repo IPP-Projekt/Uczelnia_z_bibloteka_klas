@@ -15,6 +15,9 @@ public:
     explicit Edytuj_dialog(QWidget *parent = nullptr);
     ~Edytuj_dialog();
 
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::Edytuj_dialog *ui;
 };
