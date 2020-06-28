@@ -8,6 +8,7 @@
 #include "QtSql/QSqlDriver"
 #include "QDebug"
 #include "QtSql/QSqlRecord"
+#include "QtSql"
 
 class DatabaseLibrary
 {
