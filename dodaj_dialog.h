@@ -2,6 +2,7 @@
 #define DODAJ_DIALOG_H
 
 #include <QDialog>
+#include "string"
 
 namespace Ui {
 class Dodaj_dialog;
@@ -17,6 +18,9 @@ public:
 
 private:
     Ui::Dodaj_dialog *ui;
+
+protected:
+    QString nowyrekord();
 };
 
 #endif // DODAJ_DIALOG_H
