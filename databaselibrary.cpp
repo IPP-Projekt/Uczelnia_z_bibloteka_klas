@@ -12,11 +12,9 @@ bool DatabaseLibrary::cConnectDatabase(QString hostName, QString databaseName, Q
     m_database.setUserName(userName);
     m_database.setPassword(password);
     if(m_database.open()){
-        qDebug() << "Yes";
         return true;
     }
     else{
-        qDebug() << "No";
         return false;
     }
 }
@@ -42,5 +40,6 @@ bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, QSqlRecord& record)
 {
     QSqlRecord l_record;
         int i = model->rowCount();
-        return model->insertRecord(i,record);
+        //return model->insertRecord(i,record);
+        return model->insertRecord(3,record);
 }
