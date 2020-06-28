@@ -29,9 +29,10 @@ void MainWindow::on_btn_Dodaj_clicked()
 
 void MainWindow::on_btn_Usun_clicked()
 {
-    Usun_dialog dialog;
-    dialog.setModal(true);
-    dialog.exec();
+    uczelnia.getModel(0)->removeRows(selectedEntry,1);
+    //Usun_dialog dialog;
+    //dialog.setModal(true);
+    //dialog.exec();
 }
 
 void MainWindow::on_btn_Edytuj_clicked()
