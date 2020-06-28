@@ -15,7 +15,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    UczelniaDB uczelnia;
+    int selectedEntry;
 private slots:
     void on_btn_Dodaj_clicked();
 

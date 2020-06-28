@@ -5,8 +5,6 @@
 #include "edytuj_dialog.h"
 #include "szukaj_dialog.h"
 
-UczelniaDB uczelnia;
-int selectedEntry;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -24,6 +22,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_Dodaj_clicked()
 {
     Dodaj_dialog dialog;
+    dialog.setUczelnia(&uczelnia);
     dialog.setModal(true);
     dialog.exec();
 }

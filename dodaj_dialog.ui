@@ -88,14 +88,20 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtbox_srednia">
+  <widget class="QDoubleSpinBox" name="doubleSpinBoxSrednia">
    <property name="geometry">
     <rect>
      <x>100</x>
      <y>80</y>
-     <width>133</width>
-     <height>20</height>
+     <width>131</width>
+     <height>22</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <double>5.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.500000000000000</double>
    </property>
   </widget>
  </widget>
