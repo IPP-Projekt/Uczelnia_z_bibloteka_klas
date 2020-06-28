@@ -43,9 +43,20 @@ void MainWindow::on_btn_Edytuj_clicked()
 
 void MainWindow::on_btn_Szukaj_clicked()
 {
-    Szukaj_dialog dialog;
+    QString szukana;
+    Szukaj_dialog dialog(&szukana);
     dialog.setModal(true);
     dialog.exec();
+    int znaleziona;
+    QSqlTableModel* model = uczelnia.getModel(0);
+    for(int i= 0; i < model->columnCount(); i++){
+        for(int j = 0; j < model->rowCount(); j++){
+            if(ui->tableViewDatabase->model()->index(j,i).data().toString() == szukana){
+                znaleziona = j;
+            }
+        }
+    }
+    ui->tableViewDatabase->selectRow(znaleziona);
 }
 
 void MainWindow::on_tableViewDatabase_clicked(const QModelIndex &index)
