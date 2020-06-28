@@ -21,6 +21,7 @@ public:
     void cDisconnectDatabase();
     QSqlTableModel *cModel (QString table, int numOfColumns, QString* Columns);
     static bool cInsertRecord(QSqlTableModel* model, QSqlRecord& record);
+    static int cGenerateIndex(QSqlTableModel* model);
 };
 
 #endif // DATABASELIBRARY_H

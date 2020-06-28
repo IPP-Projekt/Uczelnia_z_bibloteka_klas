@@ -28,6 +28,7 @@ void DatabaseLibrary::cDisconnectDatabase()
 QSqlTableModel *DatabaseLibrary::cModel(QString table, int numOfColumns, QString* columns)
 {
     QSqlTableModel* l_model = new QSqlTableModel(nullptr,m_database);
+    l_model->setEditStrategy(QSqlTableModel::EditStrategy::OnFieldChange);
     l_model->setTable(table);
     for(int i = 0; i < numOfColumns; i++){
         l_model[0].setHeaderData(i,Qt::Horizontal, columns[i]);
@@ -40,6 +41,18 @@ bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, QSqlRecord& record)
 {
     QSqlRecord l_record;
         int i = model->rowCount();
-        //return model->insertRecord(i,record);
-        return model->insertRecord(3,record);
+        return model->insertRecord(i,record);
+        qDebug() << model->lastError().databaseText().toStdWString();
+}
+
+int DatabaseLibrary::cGenerateIndex(QSqlTableModel *model)
+{
+    QList<int> l_list;
+    for(int i = 0; i < model->rowCount(); i++){
+        l_list.append(model->record(i).field(0).value().toInt());
+    }
+    for(int i = 0; i < model->rowCount()+1; i++){
+        if(!l_list.contains(i))
+            return i;
+    }
 }
