@@ -16,6 +16,7 @@ Dodaj_dialog::Dodaj_dialog( UczelniaDB* uczelniaPointer, QWidget *parent) :
         listaGrup.append(model->record(i).value(1).toString());
     }
     ui->comboBox->addItems(listaGrup);
+
 }
 
 Dodaj_dialog::~Dodaj_dialog()

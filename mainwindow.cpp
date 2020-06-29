@@ -33,7 +33,7 @@ void MainWindow::on_btn_Dodaj_clicked()
     }
     else if ((ui->comboBoxTable->currentText()) == "Grupy")
     {
-        Dodaj_grupe_Dialog dialog;
+        Dodaj_grupe_Dialog dialog(&uczelnia);
         dialog.setModal(true);
         dialog.exec();
 
