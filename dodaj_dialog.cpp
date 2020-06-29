@@ -31,6 +31,7 @@ void Dodaj_dialog::nowyrekord()
     rekord.setValue("Imie",tekstImie);
     rekord.setValue("Nazwisko",tekstNazwisko);
     rekord.setValue("Srednia",tekstSrednia);
+    rekord.setValue("Id_Grupy", 0);
     qDebug() << DatabaseLibrary::cInsertRecord(uczelnia->getModel(0),rekord);
 }
 

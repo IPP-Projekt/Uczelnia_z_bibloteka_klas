@@ -37,6 +37,15 @@ QSqlTableModel *DatabaseLibrary::cModel(QString table, int numOfColumns, QString
     return l_model;
 }
 
+QSqlTableModel *DatabaseLibrary::cModel(QString table)
+{
+    QSqlTableModel* l_model = new QSqlTableModel(nullptr,m_database);
+    l_model->setEditStrategy(QSqlTableModel::EditStrategy::OnFieldChange);
+    l_model->setTable(table);
+    l_model->select();
+    return l_model;
+}
+
 bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, QSqlRecord& record)
 {
     QSqlRecord l_record;
