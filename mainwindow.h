@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "uczelniadb.h"
+#include "systemoceniania.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,6 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     UczelniaDB uczelnia;
+    SystemOceniania oceny;
     int selectedEntry;
 private slots:
     void on_btn_Dodaj_clicked();
@@ -31,6 +33,10 @@ private slots:
     void on_comboBoxTable_currentIndexChanged(int index);
 
     void on_tableViewDatabase_entered(const QModelIndex &index);
+
+    void on_pushButtonOceny_clicked();
+
+    void on_pushButtonOceny_2_clicked();
 
 private:
     Ui::MainWindow *ui;

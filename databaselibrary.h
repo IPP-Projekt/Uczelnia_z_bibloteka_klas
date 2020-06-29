@@ -24,6 +24,7 @@ public:
     static bool cInsertRecord(QSqlTableModel* model, QSqlRecord& record);
     static int cGenerateIndex(QSqlTableModel* model);
     static void cRefeshModel(QSqlTableModel* model);
+    static void cChangeRecord(QSqlTableModel* model, QSqlRecord& record, int index);
 };
 
 #endif // DATABASELIBRARY_H

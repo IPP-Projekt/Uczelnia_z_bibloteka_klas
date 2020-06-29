@@ -23,6 +23,8 @@ SOURCES += \
     edytuj_dialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    oceny_studenta.cpp \
+    systemoceniania.cpp \
     szukaj_dialog.cpp \
     uczelniadb.cpp \
     usun_dialog.cpp
@@ -33,6 +35,8 @@ HEADERS += \
     dodaj_grupe_dialog.h \
     edytuj_dialog.h \
     mainwindow.h \
+    oceny_studenta.h \
+    systemoceniania.h \
     szukaj_dialog.h \
     uczelniadb.h \
     usun_dialog.h
@@ -42,6 +46,7 @@ FORMS += \
     dodaj_grupe_dialog.ui \
     edytuj_dialog.ui \
     mainwindow.ui \
+    oceny_studenta.ui \
     szukaj_dialog.ui \
     usun_dialog.ui
 

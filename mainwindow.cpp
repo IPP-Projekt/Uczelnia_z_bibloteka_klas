@@ -6,15 +6,18 @@
 #include "szukaj_dialog.h"
 #include "dodaj_grupe_dialog.h"
 #include "QMessageBox"
+#include "oceny_studenta.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
+    , oceny(SystemOceniania(&uczelnia))
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     ui->tableViewDatabase->setModel(uczelnia.getModel(0));
     ui->tableViewDatabase->show();
-    ui->comboBoxTable->addItems({"Studenci","Grupy"});
+    ui->comboBoxTable->addItems({"Studenci","Grupy","Oceny"});
+    oceny.AktualizujOceny();
 }
 
 MainWindow::~MainWindow()
@@ -30,6 +33,7 @@ void MainWindow::on_btn_Dodaj_clicked()
         dialog.setModal(true);
         dialog.exec();
         uczelnia.refreshTables();
+
     }
     else if ((ui->comboBoxTable->currentText()) == "Grupy")
     {
@@ -87,9 +91,25 @@ void MainWindow::on_comboBoxTable_currentIndexChanged(int index)
 {
     ui->tableViewDatabase->setModel(uczelnia.getModel(index));
     ui->tableViewDatabase->show();
+    if(index == 0)
+        ui->pushButtonOceny->setDisabled(0);
+    else
+        ui->pushButtonOceny->setDisabled(1);
 }
 
 void MainWindow::on_tableViewDatabase_entered(const QModelIndex &index)
 {
     uczelnia.refreshTables();
+}
+
+void MainWindow::on_pushButtonOceny_clicked()
+{
+    Oceny_studenta dialog(&uczelnia, selectedEntry);
+    dialog.setModal(true);
+    dialog.exec();
+}
+
+void MainWindow::on_pushButtonOceny_2_clicked()
+{
+    oceny.AktualizujOceny();
 }

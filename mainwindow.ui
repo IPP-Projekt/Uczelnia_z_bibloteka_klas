@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,29 @@
     <item row="0" column="0">
      <widget class="QTableView" name="tableViewDatabase"/>
     </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="btn_Szukaj">
+      <property name="text">
+       <string>Szukaj</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="pushButtonOceny">
+      <property name="text">
+       <string>Pokaż oceny wybranego studenta</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QComboBox" name="comboBoxTable"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="btn_Edytuj">
+      <property name="text">
+       <string>Edytuj</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="0">
      <widget class="QPushButton" name="btn_Dodaj">
@@ -35,17 +56,10 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="btn_Edytuj">
+    <item row="7" column="0">
+     <widget class="QPushButton" name="pushButtonOceny_2">
       <property name="text">
-       <string>Edytuj</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="btn_Szukaj">
-      <property name="text">
-       <string>Szukaj</string>
+       <string>Aktualizuj oceny</string>
       </property>
      </widget>
     </item>

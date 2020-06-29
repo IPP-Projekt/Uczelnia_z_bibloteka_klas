@@ -21,9 +21,14 @@ void Dodaj_grupe_Dialog::nowyrekord()
 {
     QString tekstNazwa = ui->txtbox_Nazwa->text();
     QString tekstKierunek = ui->txtbox_Kierunek->text();
-    QSqlRecord rekord = uczelnia->getModel(0)->record();
-    rekord.setValue("Id",DatabaseLibrary::cGenerateIndex(uczelnia->getModel(0)));
+    QSqlRecord rekord = uczelnia->getModel(1)->record();
+    rekord.setValue("Id",DatabaseLibrary::cGenerateIndex(uczelnia->getModel(1)));
     rekord.setValue("Nazwa",tekstNazwa);
     rekord.setValue("Kierunek",tekstKierunek);
-    qDebug() << DatabaseLibrary::cInsertRecord(uczelnia->getModel(0),rekord);
+    qDebug() << DatabaseLibrary::cInsertRecord(uczelnia->getModel(1),rekord);
+}
+
+void Dodaj_grupe_Dialog::on_buttonBox_accepted()
+{
+    nowyrekord();
 }
