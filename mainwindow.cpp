@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->tableViewDatabase->setModel(uczelnia.getModel(0));
     ui->tableViewDatabase->show();
+    ui->comboBoxTable->addItems({"Studenci","Grupy"});
 }
 
 MainWindow::~MainWindow()
@@ -29,7 +30,7 @@ void MainWindow::on_btn_Dodaj_clicked()
 
 void MainWindow::on_btn_Usun_clicked()
 {
-    Usun_dialog dialog(&uczelnia, selectedEntry);
+    Usun_dialog dialog(&uczelnia, selectedEntry, ui->comboBoxTable->currentIndex());
     dialog.setModal(true);
     dialog.exec();
 }
@@ -48,7 +49,7 @@ void MainWindow::on_btn_Szukaj_clicked()
     dialog.setModal(true);
     dialog.exec();
     int znaleziona;
-    QSqlTableModel* model = uczelnia.getModel(0);
+    QSqlTableModel* model = uczelnia.getModel(ui->comboBoxTable->currentIndex());
     for(int i= 0; i < model->columnCount(); i++){
         for(int j = 0; j < model->rowCount(); j++){
             if(ui->tableViewDatabase->model()->index(j,i).data().toString() == szukana){
@@ -62,4 +63,10 @@ void MainWindow::on_btn_Szukaj_clicked()
 void MainWindow::on_tableViewDatabase_clicked(const QModelIndex &index)
 {
     selectedEntry = ui->tableViewDatabase->model()->index(index.row(),0).data().toInt();
+}
+
+void MainWindow::on_comboBoxTable_currentIndexChanged(int index)
+{
+    ui->tableViewDatabase->setModel(uczelnia.getModel(index));
+    ui->tableViewDatabase->show();
 }

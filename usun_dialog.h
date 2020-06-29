@@ -15,8 +15,9 @@ class Usun_dialog : public QDialog
 public:
     UczelniaDB* uczelnia;
     int selectedEntry;
+    int selectedTable;
     int rowInModel;
-    explicit Usun_dialog(UczelniaDB* i_uczelnia, int i_selEntry, QWidget *parent = nullptr);
+    explicit Usun_dialog(UczelniaDB* i_uczelnia, int i_selEntry, int selTable, QWidget *parent = nullptr);
     ~Usun_dialog();
     int findRow();
 private slots:

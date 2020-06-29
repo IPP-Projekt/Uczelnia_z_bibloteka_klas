@@ -20,6 +20,7 @@ public:
     bool cConnectDatabase(QString hostName, QString databaseName, QString userName, QString password);
     void cDisconnectDatabase();
     QSqlTableModel *cModel (QString table, int numOfColumns, QString* Columns);
+    QSqlTableModel *cModel (QString table);
     static bool cInsertRecord(QSqlTableModel* model, QSqlRecord& record);
     static int cGenerateIndex(QSqlTableModel* model);
 };
