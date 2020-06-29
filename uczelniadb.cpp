@@ -8,3 +8,10 @@ UczelniaDB::UczelniaDB()
     m_model[0] = m_database.cModel("Studenci", 5, m_tableStudenciColumns);
     m_model[1] = m_database.cModel("Grupy");
 }
+
+void UczelniaDB::refreshTables()
+{
+    for(int i = 0; i < m_modelEntries; i++){
+        DatabaseLibrary::cRefeshModel(m_model[i]);
+    }
+}

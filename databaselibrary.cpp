@@ -65,3 +65,8 @@ int DatabaseLibrary::cGenerateIndex(QSqlTableModel *model)
             return i;
     }
 }
+
+void DatabaseLibrary::cRefeshModel(QSqlTableModel *model)
+{
+    model->select();
+}

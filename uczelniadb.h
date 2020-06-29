@@ -13,6 +13,7 @@ protected:
 public:
     UczelniaDB();
     QSqlTableModel* getModel(int index){if (index<m_modelEntries)return m_model[index];else return nullptr;}
+    void refreshTables();
 };
 
 #endif // UCZELNIADB_H

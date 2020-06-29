@@ -22,10 +22,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_Dodaj_clicked()
 {
-    Dodaj_dialog dialog;
-    dialog.setUczelnia(&uczelnia);
+    Dodaj_dialog dialog(&uczelnia);
     dialog.setModal(true);
     dialog.exec();
+    uczelnia.refreshTables();
 }
 
 void MainWindow::on_btn_Usun_clicked()
@@ -33,6 +33,7 @@ void MainWindow::on_btn_Usun_clicked()
     Usun_dialog dialog(&uczelnia, selectedEntry, ui->comboBoxTable->currentIndex());
     dialog.setModal(true);
     dialog.exec();
+    uczelnia.refreshTables();
 }
 
 void MainWindow::on_btn_Edytuj_clicked()
@@ -69,4 +70,9 @@ void MainWindow::on_comboBoxTable_currentIndexChanged(int index)
 {
     ui->tableViewDatabase->setModel(uczelnia.getModel(index));
     ui->tableViewDatabase->show();
+}
+
+void MainWindow::on_tableViewDatabase_entered(const QModelIndex &index)
+{
+    uczelnia.refreshTables();
 }
