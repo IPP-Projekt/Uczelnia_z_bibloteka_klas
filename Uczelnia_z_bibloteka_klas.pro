@@ -30,6 +30,7 @@ SOURCES += \
     edytuj_dialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    systemoceniania.cpp \
     szukaj_dialog.cpp \
     uczelniadb.cpp \
     usun_dialog.cpp
@@ -47,6 +48,7 @@ HEADERS += \
     edytuj2_srednianazwisko_dialog.h \
     edytuj_dialog.h \
     mainwindow.h \
+    systemoceniania.h \
     szukaj_dialog.h \
     uczelniadb.h \
     usun_dialog.h

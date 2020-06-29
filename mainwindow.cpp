@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->tableViewDatabase->setModel(uczelnia.getModel(0));
     ui->tableViewDatabase->show();
-    ui->comboBoxTable->addItems({"Studenci","Grupy"});
+    ui->comboBoxTable->addItems({"Studenci","Grupy","Oceny"});
 }
 
 MainWindow::~MainWindow()
