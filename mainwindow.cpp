@@ -4,6 +4,8 @@
 #include "usun_dialog.h"
 #include "edytuj_dialog.h"
 #include "szukaj_dialog.h"
+#include "dodaj_grupe_dialog.h"
+#include "QMessageBox"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,11 +24,26 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_Dodaj_clicked()
 {
-    Dodaj_dialog dialog(&uczelnia);
-    dialog.setModal(true);
-    dialog.exec();
-    uczelnia.refreshTables();
-}
+    if( (ui->comboBoxTable->currentText()) == "Studenci")
+    {
+        Dodaj_dialog dialog(&uczelnia);
+        dialog.setModal(true);
+        dialog.exec();
+        uczelnia.refreshTables();
+    }
+    else if ((ui->comboBoxTable->currentText()) == "Grupy")
+    {
+        Dodaj_grupe_Dialog dialog(&uczelnia);
+        dialog.setModal(true);
+        dialog.exec();
+
+    }
+    else
+       QMessageBox::information(this,tr("Uwaga"),tr("Nie wybrano żadnej opcji"));
+    }
+
+
+
 
 void MainWindow::on_btn_Usun_clicked()
 {

@@ -14,78 +14,42 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btn_Dodaj">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>140</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Dodaj</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_Usun">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>180</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Usun</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_Edytuj">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>220</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Edytuj</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_Szukaj">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>260</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Szukaj</string>
-    </property>
-   </widget>
-   <widget class="QTableView" name="tableViewDatabase">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>60</y>
-      <width>531</width>
-      <height>441</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxTable">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>90</y>
-      <width>111</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTableView" name="tableViewDatabase"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QComboBox" name="comboBoxTable"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="btn_Dodaj">
+      <property name="text">
+       <string>Dodaj</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="btn_Usun">
+      <property name="text">
+       <string>Usun</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="btn_Edytuj">
+      <property name="text">
+       <string>Edytuj</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="btn_Szukaj">
+      <property name="text">
+       <string>Szukaj</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

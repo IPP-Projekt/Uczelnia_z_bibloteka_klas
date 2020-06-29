@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Edytuj_dialog</class>
- <widget class="QDialog" name="Edytuj_dialog">
+ <class>Dodaj_grupe_Dialog</class>
+ <widget class="QDialog" name="Dodaj_grupe_Dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>244</width>
-    <height>152</height>
+    <width>291</width>
+    <height>155</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Który rekord chcesz edytować?</string>
+      <string>Nazwa</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QCheckBox" name="checkbox_imie">
+   <item>
+    <widget class="QLineEdit" name="txtbox_Nazwa">
      <property name="text">
-      <string>Imie</string>
+      <string>Tutaj wpisz nazwę</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QCheckBox" name="checkBox_nazwisko">
+   <item>
+    <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Nazwisko</string>
+      <string>Kierunek</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QCheckBox" name="checkBox_srednia">
+   <item>
+    <widget class="QLineEdit" name="txtbox_Kierunek">
      <property name="text">
-      <string>Srednia</string>
+      <string>Tutaj wpisz kierunek</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
+   <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -59,7 +59,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>Edytuj_dialog</receiver>
+   <receiver>Dodaj_grupe_Dialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -75,7 +75,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>Edytuj_dialog</receiver>
+   <receiver>Dodaj_grupe_Dialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
