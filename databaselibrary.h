@@ -23,6 +23,7 @@ public:
     QSqlTableModel *cModel (QString table);
     static bool cInsertRecord(QSqlTableModel* model, QSqlRecord& record);
     static int cGenerateIndex(QSqlTableModel* model);
+    static void cRefeshModel(QSqlTableModel* model);
 };
 
 #endif // DATABASELIBRARY_H

@@ -30,6 +30,8 @@ private slots:
 
     void on_comboBoxTable_currentIndexChanged(int index);
 
+    void on_tableViewDatabase_entered(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
 };

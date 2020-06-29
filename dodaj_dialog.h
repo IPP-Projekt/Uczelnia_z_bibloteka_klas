@@ -14,8 +14,10 @@ class Dodaj_dialog : public QDialog
     Q_OBJECT
 
 public:
+    bool grupa;
+    int idGrupy;
     UczelniaDB* uczelnia;
-    explicit Dodaj_dialog(QWidget *parent = nullptr);
+    explicit Dodaj_dialog(UczelniaDB* uczelniaPointer, QWidget *parent = nullptr);
     ~Dodaj_dialog();
     void setUczelnia(UczelniaDB* uczelniaPointer);
 private:
@@ -25,6 +27,8 @@ protected:
     void nowyrekord();
 private slots:
     void on_buttonBox_accepted();
+    void on_checkBoxGrupa_clicked(bool checked);
+    void on_comboBox_currentIndexChanged(int index);
 };
 
 #endif // DODAJ_DIALOG_H
