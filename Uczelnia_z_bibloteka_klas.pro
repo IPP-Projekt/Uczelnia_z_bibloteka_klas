@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     databaselibrary.cpp \
     dodaj_dialog.cpp \
+    dodaj_grupe_dialog.cpp \
     edytuj2_dialog.cpp \
     edytuj2_imie_dialog.cpp \
     edytuj2_imienazwisko_dialog.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
 HEADERS += \
     databaselibrary.h \
     dodaj_dialog.h \
+    dodaj_grupe_dialog.h \
     edytuj2_dialog.h \
     edytuj2_imie_dialog.h \
     edytuj2_imienazwisko_dialog.h \
@@ -51,6 +53,7 @@ HEADERS += \
 
 FORMS += \
     dodaj_dialog.ui \
+    dodaj_grupe_dialog.ui \
     edytuj2_dialog.ui \
     edytuj2_imie_dialog.ui \
     edytuj2_imienazwisko_dialog.ui \
