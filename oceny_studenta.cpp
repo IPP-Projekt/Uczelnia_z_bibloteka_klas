@@ -12,3 +12,8 @@ Oceny_studenta::~Oceny_studenta()
 {
     delete ui;
 }
+
+void Oceny_studenta::on_pushButtonExit_clicked()
+{
+    this->close();
+}

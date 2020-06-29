@@ -15,6 +15,9 @@ public:
     explicit Oceny_studenta(QWidget *parent = nullptr);
     ~Oceny_studenta();
 
+private slots:
+    void on_pushButtonExit_clicked();
+
 private:
     Ui::Oceny_studenta *ui;
 };
