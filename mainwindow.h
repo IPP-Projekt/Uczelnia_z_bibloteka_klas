@@ -32,6 +32,8 @@ private slots:
 
     void on_tableViewDatabase_entered(const QModelIndex &index);
 
+    void on_pushButtonOceny_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

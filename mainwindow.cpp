@@ -6,6 +6,7 @@
 #include "szukaj_dialog.h"
 #include "dodaj_grupe_dialog.h"
 #include "QMessageBox"
+#include "oceny_studenta.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -92,4 +93,11 @@ void MainWindow::on_comboBoxTable_currentIndexChanged(int index)
 void MainWindow::on_tableViewDatabase_entered(const QModelIndex &index)
 {
     uczelnia.refreshTables();
+}
+
+void MainWindow::on_pushButtonOceny_clicked()
+{
+    Oceny_studenta dialog;
+    dialog.setModal(true);
+    dialog.exec();
 }
