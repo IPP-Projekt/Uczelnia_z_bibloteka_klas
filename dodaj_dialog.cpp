@@ -43,7 +43,7 @@ void Dodaj_dialog::nowyrekord()
         rekord.setValue("Id_Grupy", "");
     else
         rekord.setValue("Id_Grupy", idGrupy);
-    qDebug() << DatabaseLibrary::cInsertRecord(uczelnia->getModel(0),rekord);
+    DatabaseLibrary::cInsertRecord(uczelnia->getModel(0),rekord);
 }
 
 void Dodaj_dialog::on_buttonBox_accepted()

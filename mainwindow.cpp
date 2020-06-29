@@ -7,6 +7,7 @@
 #include "dodaj_grupe_dialog.h"
 #include "QMessageBox"
 #include "oceny_studenta.h"
+#include "dodaj_ocene_dialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -41,6 +42,12 @@ void MainWindow::on_btn_Dodaj_clicked()
         dialog.setModal(true);
         dialog.exec();
 
+    }
+    else if ((ui->comboBoxTable->currentIndex() == 2))
+    {
+        Dodaj_ocene_dialog dialog(&uczelnia);
+        dialog.setModal(true);
+        dialog.exec();
     }
     else
        QMessageBox::information(this,tr("Uwaga"),tr("Nie wybrano żadnej opcji"));
