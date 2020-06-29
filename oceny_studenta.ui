@@ -13,16 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QListView" name="listViewOceny">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>20</y>
-     <width>256</width>
-     <height>192</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButtonExit">
    <property name="geometry">
     <rect>
@@ -34,6 +24,16 @@
    </property>
    <property name="text">
     <string>Wyjdź</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listViewOceny">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>30</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
    </property>
   </widget>
  </widget>

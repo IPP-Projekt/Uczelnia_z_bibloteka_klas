@@ -2,6 +2,7 @@
 #define OCENY_STUDENTA_H
 
 #include <QDialog>
+#include "uczelniadb.h"
 
 namespace Ui {
 class Oceny_studenta;
@@ -12,7 +13,7 @@ class Oceny_studenta : public QDialog
     Q_OBJECT
 
 public:
-    explicit Oceny_studenta(QWidget *parent = nullptr);
+    explicit Oceny_studenta(UczelniaDB* uczelniaPointer, int index, QWidget *parent = nullptr);
     ~Oceny_studenta();
 
 private slots:

@@ -88,6 +88,10 @@ void MainWindow::on_comboBoxTable_currentIndexChanged(int index)
 {
     ui->tableViewDatabase->setModel(uczelnia.getModel(index));
     ui->tableViewDatabase->show();
+    if(index == 0)
+        ui->pushButtonOceny->setDisabled(0);
+    else
+        ui->pushButtonOceny->setDisabled(1);
 }
 
 void MainWindow::on_tableViewDatabase_entered(const QModelIndex &index)
@@ -97,7 +101,7 @@ void MainWindow::on_tableViewDatabase_entered(const QModelIndex &index)
 
 void MainWindow::on_pushButtonOceny_clicked()
 {
-    Oceny_studenta dialog;
+    Oceny_studenta dialog(&uczelnia, selectedEntry);
     dialog.setModal(true);
     dialog.exec();
 }
