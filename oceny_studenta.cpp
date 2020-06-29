@@ -7,7 +7,6 @@ Oceny_studenta::Oceny_studenta(UczelniaDB* uczelniaPointer, int index, QWidget *
 {
     QSqlTableModel* modelStudenci = uczelniaPointer->getModel(0);
     QList<QString> list;
-
     int modelIndx;
     ui->setupUi(this);
     for(int i = 0; i < modelStudenci->rowCount(); i++){
@@ -16,7 +15,7 @@ Oceny_studenta::Oceny_studenta(UczelniaDB* uczelniaPointer, int index, QWidget *
             break;
         }
     }
-    qDebug() << modelIndx;
+    list.append("Student " + modelStudenci->record(modelIndx).value(1).toString() + " " + modelStudenci->record(modelIndx).value(2).toString());
     QSqlTableModel* modelOceny = uczelniaPointer->getModel(2);
     for(int i = 0; i < modelOceny->rowCount(); i++){
         if(modelOceny->record(i).value(3) == modelIndx)
