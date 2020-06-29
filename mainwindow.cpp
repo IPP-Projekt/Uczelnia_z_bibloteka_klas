@@ -10,12 +10,14 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
+    , oceny(SystemOceniania(&uczelnia))
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     ui->tableViewDatabase->setModel(uczelnia.getModel(0));
     ui->tableViewDatabase->show();
     ui->comboBoxTable->addItems({"Studenci","Grupy","Oceny"});
+    oceny.AktualizujOceny();
 }
 
 MainWindow::~MainWindow()
@@ -31,6 +33,7 @@ void MainWindow::on_btn_Dodaj_clicked()
         dialog.setModal(true);
         dialog.exec();
         uczelnia.refreshTables();
+
     }
     else if ((ui->comboBoxTable->currentText()) == "Grupy")
     {
@@ -104,4 +107,9 @@ void MainWindow::on_pushButtonOceny_clicked()
     Oceny_studenta dialog(&uczelnia, selectedEntry);
     dialog.setModal(true);
     dialog.exec();
+}
+
+void MainWindow::on_pushButtonOceny_2_clicked()
+{
+    oceny.AktualizujOceny();
 }

@@ -48,7 +48,6 @@ QSqlTableModel *DatabaseLibrary::cModel(QString table)
 
 bool DatabaseLibrary::cInsertRecord(QSqlTableModel *model, QSqlRecord& record)
 {
-    QSqlRecord l_record;
         int i = model->rowCount();
         return model->insertRecord(i,record);
         qDebug() << model->lastError().databaseText().toStdWString();
@@ -69,4 +68,9 @@ int DatabaseLibrary::cGenerateIndex(QSqlTableModel *model)
 void DatabaseLibrary::cRefeshModel(QSqlTableModel *model)
 {
     model->select();
+}
+
+void DatabaseLibrary::cChangeRecord(QSqlTableModel *model, QSqlRecord &record, int index)
+{
+    model->setRecord(index,record);
 }
