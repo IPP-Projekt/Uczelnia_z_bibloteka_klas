@@ -15,7 +15,9 @@ Dodaj_dialog::~Dodaj_dialog()
 {
     delete ui;
 }
-void Dodaj_dialog::setUczelnia(UczelniaDB* uczelniaPointer){
+
+void Dodaj_dialog::setUczelnia(UczelniaDB* uczelniaPointer)
+{
     uczelnia = uczelniaPointer;
 }
 
@@ -31,8 +33,6 @@ void Dodaj_dialog::nowyrekord()
     rekord.setValue("Srednia",tekstSrednia);
     qDebug() << DatabaseLibrary::cInsertRecord(uczelnia->getModel(0),rekord);
 }
-
-
 
 void Dodaj_dialog::on_buttonBox_accepted()
 {
