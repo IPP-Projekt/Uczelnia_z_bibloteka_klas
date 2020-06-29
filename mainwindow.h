@@ -38,6 +38,8 @@ private slots:
 
     void on_pushButtonOceny_2_clicked();
 
+    void on_comboBoxSort_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
 };

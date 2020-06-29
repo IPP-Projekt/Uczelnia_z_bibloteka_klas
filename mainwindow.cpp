@@ -95,6 +95,13 @@ void MainWindow::on_comboBoxTable_currentIndexChanged(int index)
         ui->pushButtonOceny->setDisabled(0);
     else
         ui->pushButtonOceny->setDisabled(1);
+    ui->comboBoxSort->clear();
+    for(int i = 0; i < uczelnia.getModel(index)->columnCount(); i++){
+        ui->comboBoxSort->addItem("Rosnąco - " + uczelnia.getModel(index)->record().fieldName(i));
+    }
+    for(int i = 0; i < uczelnia.getModel(index)->columnCount(); i++){
+        ui->comboBoxSort->addItem("Malejąco - " + uczelnia.getModel(index)->record().fieldName(i));
+    }
 }
 
 void MainWindow::on_tableViewDatabase_entered(const QModelIndex &index)
@@ -112,4 +119,16 @@ void MainWindow::on_pushButtonOceny_clicked()
 void MainWindow::on_pushButtonOceny_2_clicked()
 {
     oceny.AktualizujOceny();
+}
+
+void MainWindow::on_comboBoxSort_currentIndexChanged(int index)
+{
+    if(index < uczelnia.getModel(ui->comboBoxTable->currentIndex())->columnCount()){
+        uczelnia.getModel(ui->comboBoxTable->currentIndex())->setSort(index,Qt::AscendingOrder);
+    }
+    else{
+        index -= uczelnia.getModel(ui->comboBoxTable->currentIndex())->columnCount();
+        uczelnia.getModel(ui->comboBoxTable->currentIndex())->setSort(index,Qt::DescendingOrder);
+    }
+    uczelnia.refreshTables();
 }
