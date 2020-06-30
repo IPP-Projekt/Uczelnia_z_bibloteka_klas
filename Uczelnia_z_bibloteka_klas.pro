@@ -22,6 +22,7 @@ SOURCES += \
     dodaj_grupe_dialog.cpp \
     dodaj_ocene_dialog.cpp \
     edytuj_dialog.cpp \
+    konfiguracja.cpp \
     main.cpp \
     mainwindow.cpp \
     oceny_studenta.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     dodaj_grupe_dialog.h \
     dodaj_ocene_dialog.h \
     edytuj_dialog.h \
+    konfiguracja.h \
     mainwindow.h \
     oceny_studenta.h \
     systemoceniania.h \

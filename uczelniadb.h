@@ -2,6 +2,7 @@
 #define UCZELNIADB_H
 
 #include "databaselibrary.h"
+#include "konfiguracja.h"
 
 class UczelniaDB
 {
