@@ -33,12 +33,11 @@ void Dodaj_dialog::nowyrekord()
 {
     QString tekstImie = ui->txtbox_imie->text();
     QString tekstNazwisko = ui->txtbox_nazwisko->text();
-    QString tekstSrednia = QString::number(ui->doubleSpinBoxSrednia->value());
     QSqlRecord rekord = uczelnia->getModel(0)->record();
     rekord.setValue("Id",DatabaseLibrary::cGenerateIndex(uczelnia->getModel(0)));
     rekord.setValue("Imie",tekstImie);
     rekord.setValue("Nazwisko",tekstNazwisko);
-    rekord.setValue("Srednia",tekstSrednia);
+    rekord.setValue("Srednia","");
     if(grupa == true)
         rekord.setValue("Id_Grupy", "");
     else
