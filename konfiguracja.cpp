@@ -12,10 +12,6 @@ Konfiguracja::Konfiguracja(QString lokacja): lokacjaPliku(lokacja)
     bazaDanych.append(konfiguracja->value("uzytkownik").toString());
     bazaDanych.append(konfiguracja->value("haslo").toString());
     konfiguracja->endGroup();
-    qDebug() << bazaDanych.value(0);
-    qDebug() << bazaDanych.value(1);
-    qDebug() << bazaDanych.value(2);
-    qDebug() << bazaDanych.value(3);
 }
 
 QString Konfiguracja::getLocalhost()
