@@ -56,7 +56,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>150</y>
+     <y>180</y>
      <width>47</width>
      <height>13</height>
     </rect>
@@ -69,7 +69,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>150</y>
+     <y>180</y>
      <width>211</width>
      <height>22</height>
     </rect>
@@ -105,6 +105,29 @@
    </property>
    <property name="text">
     <string>Ocena:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Grupa:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxGrupa">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>150</y>
+     <width>81</width>
+     <height>22</height>
+    </rect>
    </property>
   </widget>
  </widget>

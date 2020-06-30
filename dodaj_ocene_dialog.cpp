@@ -7,12 +7,13 @@ Dodaj_ocene_dialog::Dodaj_ocene_dialog(UczelniaDB* uczelniaPointer, QWidget *par
 {
     ui->setupUi(this);
     uczelnia = uczelniaPointer;
-    QList<QString> listaStudentow;
-    QSqlTableModel* model = uczelnia->getModel(0);
+    QList<QString> listaGrup;
+    QSqlTableModel* model = uczelnia->getModel(1);
     for(int i = 0; i < model->rowCount(); i++){
-        listaStudentow.append(model->record(i).value(1).toString() + " " + model->record(i).value(2).toString() + " Grupa: " + model->record(i).value(4).toString());
+        listaGrup.append(model->record(i).value(1).toString());
     }
-    ui->comboBox->addItems(listaStudentow);
+    listaGrup.append("bez grupy");
+    ui->comboBoxGrupa->addItems(listaGrup);
 }
 
 Dodaj_ocene_dialog::~Dodaj_ocene_dialog()
@@ -26,6 +27,30 @@ void Dodaj_ocene_dialog::on_buttonBox_accepted()
     rekord.setValue("ID",DatabaseLibrary::cGenerateIndex(uczelnia->getModel(2)));
     rekord.setValue("Przedmiot",ui->lineEditPrzedmiot->text());
     rekord.setValue("Ocena",ui->doubleSpinBoxOcena->value());
-    rekord.setValue("Student",ui->comboBox->currentIndex());
+    rekord.setValue("Student",indexList.value(ui->comboBox->currentIndex()));
     DatabaseLibrary::cInsertRecord(uczelnia->getModel(2),rekord);
+}
+
+void Dodaj_ocene_dialog::on_comboBoxGrupa_currentIndexChanged(int index)
+{
+    ui->comboBox->clear();
+    indexList.clear();
+    QList<QString> listaStudentow;
+    QSqlTableModel* model = uczelnia->getModel(0);
+    if (index < uczelnia->getModel(1)->rowCount()){
+        for(int i = 0; i < model->rowCount(); i++){
+            if(uczelnia->getModel(1)->record(index).value(0) == model->record(i).value(4)){
+                listaStudentow.append(model->record(i).value(1).toString() + " " + model->record(i).value(2).toString());
+                indexList.append(model->record(i).value(0).toString());
+            }
+        }
+    }
+    else
+        for(int i = 0; i < model->rowCount(); i++){
+            if(model->record(i).value(4).toString() == ""){
+                listaStudentow.append(model->record(i).value(1).toString() + " " + model->record(i).value(2).toString());
+                indexList.append(model->record(i).value(0).toString());
+            }
+        }
+    ui->comboBox->addItems(listaStudentow);
 }
