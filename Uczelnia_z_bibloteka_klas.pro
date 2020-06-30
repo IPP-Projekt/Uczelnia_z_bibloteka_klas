@@ -20,6 +20,7 @@ SOURCES += \
     databaselibrary.cpp \
     dodaj_dialog.cpp \
     dodaj_grupe_dialog.cpp \
+    dodaj_ocene_dialog.cpp \
     edytuj_dialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     databaselibrary.h \
     dodaj_dialog.h \
     dodaj_grupe_dialog.h \
+    dodaj_ocene_dialog.h \
     edytuj_dialog.h \
     mainwindow.h \
     oceny_studenta.h \
@@ -44,6 +46,7 @@ HEADERS += \
 FORMS += \
     dodaj_dialog.ui \
     dodaj_grupe_dialog.ui \
+    dodaj_ocene_dialog.ui \
     edytuj_dialog.ui \
     mainwindow.ui \
     oceny_studenta.ui \
