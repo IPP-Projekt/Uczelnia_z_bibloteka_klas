@@ -8,13 +8,17 @@
 class Konfiguracja
 {
 protected:
-QSettings* konfiguracja;
+    QString lokacjaPliku;
+    QSettings* konfiguracja;
+    QList<QString> bazaDanych;
 public:
-    Konfiguracja();
+    Konfiguracja(QString lokacja = (QDir::currentPath() + "/konfiguracja.ini"));
     QString getLocalhost();
     QString getLocation();
     QString getUserName();
     QString getPassword();
+    void stworzKonfiguracje();
+    bool sprawdzKonfiguracje();
 };
 
 #endif // KONFIGURACJA_H
